@@ -5,8 +5,7 @@
         SM:
             id: sm
         BoxLayout:
-            size_hint_y: None
-            height: 75
+            size_hint_y: 0.1
             Button:
                 on_release:
                     sm.transition.direction='right'
@@ -30,17 +29,111 @@
         orientation: 'vertical'
         TextInput:
             font_size: 24
-            size_hint_y: None
-            height: 50
+            size_hint_y: 0.1
         Scroll:
 <CatalogScreen>
     name: 'catalog'
-    Label:
-        text: 'catalog'
+    GridLayout:
+        cols: 1
+        padding: 10
+        spacing: 10
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Гостиная'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Спальня'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Прихожая'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Детская'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Кухня'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Библиотека'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Комоды'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: 'Шкафы'
 <AccountScreen>
     name: 'account'
-    Label:
-        text: 'account'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            size_hint_y: .25
+            BoxLayout:
+                Label:
+                    text: 'Image'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'Имя пользователя'
+                Label:
+                    text: 'email'
+        GridLayout:
+            cols:1
+            Label:
+                text: 'Корзина'
 <Scroll>
     ProductList:
 <ProductList>
