@@ -30,83 +30,70 @@
         TextInput:
             font_size: 24
             size_hint_y: 0.1
+            on_text:
+                list.Update(self.text.lower())
         Scroll:
+            ProductList:
+                id: list
+<CatalogButton>
+    canvas.before:
+        Color:
+            rgba: .5, .5, .5, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
 <CatalogScreen>
     name: 'catalog'
     GridLayout:
         cols: 1
         padding: 10
         spacing: 10
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Гостиная'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Спальня'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Прихожая'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Детская'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Кухня'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Библиотека'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Комоды'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+        CatalogButton:
+            on_release:
+                root.manager.current='main'
+                root.manager.transition.direction='left'
             Label:
                 text: 'Шкафы'
 <AccountScreen>
@@ -135,7 +122,6 @@
             Label:
                 text: 'Корзина'
 <Scroll>
-    ProductList:
 <ProductList>
     cols: 1
     size_hint_y: None

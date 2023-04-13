@@ -7,12 +7,12 @@ class product():
 
 productList=[]
 
-productList.append(product('NATURE компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/944/400_240_2/944bb154577b032ebfc449908aafb50c.jpg', 'Коллекции мебели для спальни', 'Спальня'))
-productList.append(product('Монако компановка 03', 'http://glazovmebel.ru/upload/resize_cache/iblock/183/400_240_2/1832ccb3925387244e8afb0d99a6039e.jpg', 'Шкафы', 'Шкафы'))
-productList.append(product('Леон компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/f40/400_240_2/f409918ba6d9a9cb0a60016368e4a7b3.jpg', 'Мебель для гостиной', 'Гостиная'))
-productList.append(product('NATURE компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/944/400_240_2/944bb154577b032ebfc449908aafb50c.jpg', 'Коллекции мебели для спальни', 'Спальня'))
-productList.append(product('Монако компановка 03', 'http://glazovmebel.ru/upload/resize_cache/iblock/183/400_240_2/1832ccb3925387244e8afb0d99a6039e.jpg', 'Шкафы', 'Шкафы'))
-productList.append(product('Леон компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/f40/400_240_2/f409918ba6d9a9cb0a60016368e4a7b3.jpg', 'Мебель для гостиной', 'Гостиная'))
-productList.append(product('NATURE компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/944/400_240_2/944bb154577b032ebfc449908aafb50c.jpg', 'Коллекции мебели для спальни', 'Спальня'))
-productList.append(product('Монако компановка 03', 'http://glazovmebel.ru/upload/resize_cache/iblock/183/400_240_2/1832ccb3925387244e8afb0d99a6039e.jpg', 'Шкафы', 'Шкафы'))
-productList.append(product('Леон компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/f40/400_240_2/f409918ba6d9a9cb0a60016368e4a7b3.jpg', 'Мебель для гостиной', 'Гостиная'))
+productList.append(product('NATURE компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/2d7/400_240_2/2d7e8454d6787ec36f7f517fee36e2d6.jpg', 'Коллекции мебели для спальни', 'Спальня'))
+productList.append(product('Монако компановка 03', 'http://glazovmebel.ru/upload/resize_cache/iblock/797/400_240_2/7971f6811a06cdab8d26c0f4c0800fbe.jpg', 'Шкафы', 'Шкафы'))
+productList.append(product('Леон компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/dac/400_240_2/dac1ae1e6713b150c1a386ca33b3be3c.jpg', 'Мебель для гостиной', 'Гостиная'))
+productList.append(product('NATURE компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/2d7/400_240_2/2d7e8454d6787ec36f7f517fee36e2d6.jpg', 'Коллекции мебели для спальни', 'Спальня'))
+productList.append(product('Монако компановка 03', 'http://glazovmebel.ru/upload/resize_cache/iblock/797/400_240_2/7971f6811a06cdab8d26c0f4c0800fbe.jpg', 'Шкафы', 'Шкафы'))
+productList.append(product('Леон компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/dac/400_240_2/dac1ae1e6713b150c1a386ca33b3be3c.jpg', 'Мебель для гостиной', 'Гостиная'))
+productList.append(product('NATURE компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/2d7/400_240_2/2d7e8454d6787ec36f7f517fee36e2d6.jpg', 'Коллекции мебели для спальни', 'Спальня'))
+productList.append(product('Монако компановка 03', 'http://glazovmebel.ru/upload/resize_cache/iblock/797/400_240_2/7971f6811a06cdab8d26c0f4c0800fbe.jpg', 'Шкафы', 'Шкафы'))
+productList.append(product('Леон компоновка 1', 'http://glazovmebel.ru/upload/resize_cache/iblock/dac/400_240_2/dac1ae1e6713b150c1a386ca33b3be3c.jpg', 'Мебель для гостиной', 'Гостиная'))
