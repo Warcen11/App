@@ -25,8 +25,21 @@ class CatalogScreen(Screen):
 class AccountScreen(Screen):
     pass
 
+class TagScreen(Screen):
+    pass
+
 class Scroll(ScrollView):
     pass
+
+class TagProductList(GridLayout):
+    def __init__(self, **kwargs):
+        super(TagProductList, self).__init__(**kwargs)
+    def tagList(self, tag):
+        self.clear_widgets()
+        for obj in productList:
+            if tag in obj.tag:
+                self.add_widget(Product(obj.name, obj.type, obj.picture))
+                self.bind(minimum_height=self.setter('height'))
 
 class ProductList(GridLayout):
     def __init__(self, **kwargs):

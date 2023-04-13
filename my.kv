@@ -8,7 +8,8 @@
             size_hint_y: 0.1
             Button:
                 on_release:
-                    sm.transition.direction='right'
+                    if sm.current=='tag': sm.transition.direction='left'
+                    else: sm.transition.direction='right'
                     sm.current='catalog'
             Button:
                 on_release:
@@ -22,7 +23,16 @@
 <SM>
     MainScreen:
     CatalogScreen:
+        id:catalog
     AccountScreen:
+    TagScreen:
+        on_pre_enter:
+            list.tagList(catalog.tag)
+        BoxLayout:
+            orientation: 'vertical'
+            Scroll:
+                TagProductList:
+                    id: list
 <MainScreen>
     name: 'main'
     BoxLayout:
@@ -50,50 +60,58 @@
         spacing: 10
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Гостиная'
+                root.manager.current='tag'
             Label:
                 text: 'Гостиная'
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Спальня'
+                root.manager.current='tag'
             Label:
                 text: 'Спальня'
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Прихожая'
+                root.manager.current='tag'
             Label:
                 text: 'Прихожая'
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Детская'
+                root.manager.current='tag'
             Label:
                 text: 'Детская'
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Кухня'
+                root.manager.current='tag'
             Label:
                 text: 'Кухня'
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Библиотека'
+                root.manager.current='tag'
             Label:
                 text: 'Библиотека'
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Комоды'
+                root.manager.current='tag'
             Label:
                 text: 'Комоды'
         CatalogButton:
             on_release:
-                root.manager.current='main'
-                root.manager.transition.direction='left'
+                root.manager.transition.direction='right'
+                root.tag='Шкафы'
+                root.manager.current='tag'
             Label:
                 text: 'Шкафы'
 <AccountScreen>
@@ -121,7 +139,14 @@
             cols:1
             Label:
                 text: 'Корзина'
+<TagScreen>
+    name: 'tag'
 <Scroll>
+<TagProductList>
+    cols: 1
+    size_hint_y: None
+    spacing: 10
+    padding: 10
 <ProductList>
     cols: 1
     size_hint_y: None
