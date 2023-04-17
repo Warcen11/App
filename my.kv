@@ -1,4 +1,6 @@
 <application>
+    screenmanager: sm
+    choosedProduct: None
     BoxLayout:
         size: root.size
         orientation: 'vertical'
@@ -14,7 +16,9 @@
             Button:
                 on_release:
                     if sm.current=='catalog': sm.transition.direction='left'
+                    if sm.current=='tag': sm.transition.direction='left'
                     if sm.current=='account': sm.transition.direction='right'
+                    if sm.current=='product': sm.transition.direction='right'
                     sm.current='main'
             Button:
                 on_release:
@@ -33,6 +37,7 @@
             Scroll:
                 TagProductList:
                     id: list
+    ProductScreen:
 <MainScreen>
     name: 'main'
     BoxLayout:
@@ -155,3 +160,24 @@
 <Product>
     size_hint_y: None
     height: 100
+    on_release:
+        app.root.choosedProduct=self.id
+        app.root.screenmanager.transition.direction='left'
+        app.root.screenmanager.current='product'
+<ProductScreen>
+    name:'product'
+    img: ''
+    prodName: ''
+    type: ''
+    cost: ''
+    on_pre_enter:
+        self.update(app.root.choosedProduct)
+    Scroll:
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            minimum_height: self.height
+            Label:
+                text: root.prodName
+            Label:
+                text: root.type

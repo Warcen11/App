@@ -31,6 +31,15 @@ class TagScreen(Screen):
 class Scroll(ScrollView):
     pass
 
+class ProductScreen(Screen):
+    def __init__(self, **kw):
+        super(ProductScreen, self).__init__(**kw)
+    def update(self,id):
+        for obj in productList:
+            if obj.id==id:
+                self.prodName=obj.name
+                self.type=obj.type
+
 class TagProductList(GridLayout):
     def __init__(self, **kwargs):
         super(TagProductList, self).__init__(**kwargs)
@@ -38,26 +47,26 @@ class TagProductList(GridLayout):
         self.clear_widgets()
         for obj in productList:
             if tag in obj.tag:
-                self.add_widget(Product(obj.name, obj.type, obj.picture))
+                self.add_widget(Product(obj.name, obj.type, obj.picture, obj.id))
                 self.bind(minimum_height=self.setter('height'))
 
 class ProductList(GridLayout):
     def __init__(self, **kwargs):
         super(ProductList, self).__init__(**kwargs)
         for obj in productList:
-            self.add_widget(Product(obj.name, obj.type, obj.picture))
+            self.add_widget(Product(obj.name, obj.type, obj.picture, obj.id))
             self.bind(minimum_height=self.setter('height'))
     def Update(self, text):
         self.clear_widgets()
         for obj in productList:
             if text in obj.name.lower() or text in obj.type.lower() or text in obj.tag.lower():
-                self.add_widget(Product(obj.name, obj.type, obj.picture))
+                self.add_widget(Product(obj.name, obj.type, obj.picture, obj.id))
                 self.bind(minimum_height=self.setter('height'))
         if self.children==[]:
             self.add_widget(Label(text='По вашему запросу нияего не найдено'))
 
-class Product(BoxLayout):
-    def __init__(self, n, t, i):
+class Product(ButtonBehavior, BoxLayout):
+    def __init__(self, n, t, i, idProd):
         super(Product, self).__init__()
         with self.canvas:
             Color(.5, .5, .5)
@@ -68,6 +77,7 @@ class Product(BoxLayout):
         prod_name.add_widget(Label(text=n))
         prod_name.add_widget(Label(text=t))
         self.add_widget(prod_name)
+        self.id=idProd
     def update_rect(self, *args):
         self.rect.pos=self.pos
         self.rect.size=self.size
