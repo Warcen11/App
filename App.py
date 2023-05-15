@@ -4,11 +4,12 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.image import AsyncImage
+from kivy.uix.image import Image
 from kivy.uix.label import Label
 from kivy.graphics import Rectangle, Color
 from kivy.uix.button import ButtonBehavior
 from productList import productList
+from kivy.garden.mapview import MapView, MapMarker
 
 class application(Widget):
     pass
@@ -22,13 +23,19 @@ class MainScreen(Screen):
 class CatalogScreen(Screen):
     pass
 
-class AccountScreen(Screen):
+class MapScreen(Screen):
     pass
 
 class TagScreen(Screen):
     pass
 
 class Scroll(ScrollView):
+    pass
+
+class Map(MapView):
+    pass
+
+class Marker(MapMarker):
     pass
 
 class ProductScreen(Screen):
@@ -39,6 +46,8 @@ class ProductScreen(Screen):
             if obj.id==id:
                 self.prodName=obj.name
                 self.type=obj.type
+                self.img=obj.picture
+                self.cost=obj.cost
 
 class TagProductList(GridLayout):
     def __init__(self, **kwargs):
@@ -68,19 +77,12 @@ class ProductList(GridLayout):
 class Product(ButtonBehavior, BoxLayout):
     def __init__(self, n, t, i, idProd):
         super(Product, self).__init__()
-        with self.canvas:
-            Color(.5, .5, .5)
-            self.rect=Rectangle(pos=self.pos, size=self.size)
-            self.bind(pos=self.update_rect, size=self.update_rect)
-        self.add_widget(AsyncImage(source=i))
+        self.add_widget(Image(source=i))
         prod_name=BoxLayout(orientation='vertical')
         prod_name.add_widget(Label(text=n))
         prod_name.add_widget(Label(text=t))
         self.add_widget(prod_name)
         self.id=idProd
-    def update_rect(self, *args):
-        self.rect.pos=self.pos
-        self.rect.size=self.size
 
 class CatalogButton(ButtonBehavior, BoxLayout):
     pass

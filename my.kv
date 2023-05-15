@@ -23,12 +23,12 @@
             Button:
                 on_release:
                     sm.transition.direction='left'
-                    sm.current='account'
+                    sm.current='map'
 <SM>
     MainScreen:
     CatalogScreen:
         id:catalog
-    AccountScreen:
+    MapScreen:
     TagScreen:
         on_pre_enter:
             list.tagList(catalog.tag)
@@ -42,12 +42,26 @@
     name: 'main'
     BoxLayout:
         orientation: 'vertical'
-        TextInput:
-            font_size: 24
+        BoxLayout:
             size_hint_y: 0.1
-            on_text:
-                list.Update(self.text.lower())
+            padding: 5
+            canvas.before:
+                Color:
+                    rgba: 1, .5, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            TextInput:
+                font_size: 24
+                on_text:
+                    list.Update(self.text.lower())
         Scroll:
+            canvas.before:
+                Color:
+                    rgba: .5, .5, .5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
             ProductList:
                 id: list
 <CatalogButton>
@@ -60,6 +74,12 @@
 <CatalogScreen>
     name: 'catalog'
     GridLayout:
+        canvas.before:
+            Color:
+                rgba: .5, .5, .5, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
         cols: 1
         padding: 10
         spacing: 10
@@ -119,33 +139,23 @@
                 root.manager.current='tag'
             Label:
                 text: 'Шкафы'
-<AccountScreen>
-    name: 'account'
-    BoxLayout:
-        orientation: 'vertical'
-        BoxLayout:
-            canvas.before:
-                Color:
-                    rgba: .5, .5, .5, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-            size_hint_y: .25
-            BoxLayout:
-                Label:
-                    text: 'Image'
-            BoxLayout:
-                orientation: 'vertical'
-                Label:
-                    text: 'Имя пользователя'
-                Label:
-                    text: 'email'
-        GridLayout:
-            cols:1
-            Label:
-                text: 'Корзина'
+<Map>
+<Marker>
+<MapScreen>
+    name: 'map'
+    Map:
+        lat: 58.132596
+        lon: 52.685311
+        zoom: 17
 <TagScreen>
     name: 'tag'
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: .5, .5, .5, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
 <Scroll>
 <TagProductList>
     cols: 1
@@ -172,12 +182,48 @@
     cost: ''
     on_pre_enter:
         self.update(app.root.choosedProduct)
-    Scroll:
-        GridLayout:
-            cols: 1
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: .5, .5, .5, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            source: root.img
             size_hint_y: None
-            minimum_height: self.height
-            Label:
-                text: root.prodName
-            Label:
-                text: root.type
+            height: 200
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 0
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                Label:
+                    text: root.prodName
+                Label:
+                    text: root.type
+                Label:
+                    text: root.cost
+            BoxLayout:
+                orientation: 'vertical'
+                Scroll:
+                    do_scroll_x: True
+                    do_scroll_y: False
+                    GridLayout:
+                        rows: 1
+                        size_hint_x: None
+                        BoxLayout:
+                            orientation: 'vertical'
+                            Image:
+                                source: '2122f4d92b503739001e393f92726011.jpg'
+                            BoxLayout:
+                                orientation: 'vertical'
+                                size_hint_y: None
+                                Label:
+                                    text: 'Nature 307'
+                                Label:
+                                    text: 'Кровать Люкс'
+                                Label:
+                                    text: '8250 ₽'
