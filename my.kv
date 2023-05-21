@@ -43,8 +43,8 @@
     BoxLayout:
         orientation: 'vertical'
         BoxLayout:
-            size_hint_y: 0.1
-            padding: 5
+            size_hint_y: 0.075
+            padding: 20
             canvas.before:
                 Color:
                     rgba: 1, .5, 0, 1
@@ -52,7 +52,7 @@
                     pos: self.pos
                     size: self.size
             TextInput:
-                font_size: 24
+                font_size: 128
                 on_text:
                     list.Update(self.text.lower())
         Scroll:
@@ -163,7 +163,7 @@
     padding: 10
 <Product>
     size_hint_y: None
-    height: 100
+    height: 200
     on_release:
         app.root.choosedProduct=self.id
         app.root.screenmanager.transition.direction='left'
