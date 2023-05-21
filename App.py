@@ -9,7 +9,6 @@ from kivy.uix.label import Label
 from kivy.graphics import Rectangle, Color
 from kivy.uix.button import ButtonBehavior
 from productList import productList
-from kivy.garden.mapview import MapView, MapMarker
 
 class application(Widget):
     pass
@@ -30,12 +29,6 @@ class TagScreen(Screen):
     pass
 
 class Scroll(ScrollView):
-    pass
-
-class Map(MapView):
-    pass
-
-class Marker(MapMarker):
     pass
 
 class ProductScreen(Screen):

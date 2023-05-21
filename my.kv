@@ -17,7 +17,7 @@
                 on_release:
                     if sm.current=='catalog': sm.transition.direction='left'
                     if sm.current=='tag': sm.transition.direction='left'
-                    if sm.current=='account': sm.transition.direction='right'
+                    if sm.current=='map': sm.transition.direction='right'
                     if sm.current=='product': sm.transition.direction='right'
                     sm.current='main'
             Button:
@@ -139,14 +139,8 @@
                 root.manager.current='tag'
             Label:
                 text: 'Шкафы'
-<Map>
-<Marker>
 <MapScreen>
     name: 'map'
-    Map:
-        lat: 58.132596
-        lon: 52.685311
-        zoom: 17
 <TagScreen>
     name: 'tag'
     BoxLayout:
